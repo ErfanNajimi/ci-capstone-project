@@ -39,14 +39,28 @@ nav {
     color: #3B28CC;
 }
 
+/* Login page */
+
+.btn-signup {
+    background-color: #3B28CC;
+    color:#E6E8E6;
+}
+
+.btn-signup:hover{
+    background-color: #FFB30F;
+    font-size: 120%;
+    color: #E6E8E6;
+}
+
 /* Footer */
 footer {
     background-color: #3B28CC;
     color: #E6E8E6;
     height: 100px;
     width: 100%;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
 }
