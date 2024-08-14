@@ -47,7 +47,7 @@ Below you will find information about the features in this project.
 
 ## Testing 
 
-.
+![HTML] ()
 
 
 ### Validator Testing 
