@@ -53,4 +53,4 @@ class Expense(models.Model):
         ordering = ["-date_added"]
     
     def __str__(self):
-        return f"{self.source}"
+        return f"{self.description}"

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Income</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for income in incomes %}
+                  <tr>
+                    <td>{{ income.source }}</td>
+                    <td>£{{ income.amount }}</td>
+                    <td>
+                        {% if income.freq == 1 %}
+                        Monthly
+                        {% elif income.freq == 3 %}
+                        Quarterly
+                        {% elif income.freq == 12 %}
+                        Annually
+                        {% else %}
+                        N / A
+                        {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Expense</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Frequency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for expense in expenses %}
+                  <tr>
+                    <td>{{ expense.description }}</td>
+                    <td>£{{ expense.amount }}</td>
+                    <td>
+                        {% if expense.freq == 1 %}
+                        Monthly
+                        {% elif expense.freq == 3 %}
+                        Quarterly
+                        {% elif expense.freq == 12 %}
+                        Annually
+                        {% else %}
+                        N / A
+                        {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
