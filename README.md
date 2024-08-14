@@ -15,59 +15,39 @@ Below you will find information about the features in this project.
   - Featured on all three pages, the full responsive navigation bar includes links to the Logo, Home page, Register and Sign Up page and is identical in each page when user is not logged in.
   - Once logged in, the nav bar replaces register link with expense tracker and replaces login with log out.
 
-![Landing Page]()
-
-- __Club Ethos Section__
-
-  - The club ethos section will allow the user to see the benefits of joining the Love Running meetups, as well as the benefits of running overall. 
-  - This user will see the value of signing up for the Love Running meetups. This should encourage the user to consider running as their form of exercise. 
-
-![Club Ethos](https://github.com/lucyrush/readme-template/blob/master/media/love_running_ethos.png)
-
-- __Meetup Times section__
-
-  - This section will allow the user to see exactly when the meetups will happen, where they will be located and how long the run will be in kilometers. 
-  - This section will be updated as these times change to keep the user up to date. 
-
-![Meetup Times](https://github.com/lucyrush/readme-template/blob/master/media/love_running_times.png)
+![Landing Page](https://github.com/ErfanNajimi/ci-capstone-project/blob/main/staticfiles/images/readMe-images/home-page.png)
 
 - __The Footer__ 
 
-  - The footer section includes links to the relevant social media sites for Love Running. The links will open to a new tab to allow easy navigation for the user. 
-  - The footer is valuable to the user as it encourages them to keep connected via social media
+  - The footer section includes links to the relevant social media sites for Financially's online presence. The links will open to a new tab to allow easy navigation for the user. 
+  - The footer is valuable to the user as it encourages them to keep connected via social media.
 
-![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png)
+- __The Register Page__
 
-- __Gallery__
+  - This page will allow the user to get registered for an account with Financially to start tracking their finances. 
 
-  - The gallery will provide the user with supporting images to see what the meet ups look like. 
-  - This section is valuable to the user as they will be able to easily identify the types of events the organisation puts together. 
+![Sign Up](https://github.com/ErfanNajimi/ci-capstone-project/blob/main/staticfiles/images/readMe-images/register.png)
 
-![Gallery](https://github.com/lucyrush/readme-template/blob/master/media/love_running_gallery.png)
+- __The Login & Logout Page__
 
-- __The Sign Up Page__
+  - This page will allow the user to get logged in to their account and logged out.
 
-  - This page will allow the user to get signed up to Love Running to start their running journey with the community. The user will be able specify if they would like to take part in road, trail or both types of running. The user will be asked to submit their full name and email address. 
+![Login](https://github.com/ErfanNajimi/ci-capstone-project/blob/main/staticfiles/images/readMe-images/login.png)
+![Logout](https://github.com/ErfanNajimi/ci-capstone-project/blob/main/staticfiles/images/readMe-images/sign-out.png)
 
-![Sign Up](https://github.com/lucyrush/readme-template/blob/master/media/love_running_signup.png)
+- __Expense Tracker__
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+  - Page allows user to view their income sources and expenses and will be able to add to them once logged in.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+![Expense Tracker](https://github.com/ErfanNajimi/ci-capstone-project/blob/main/staticfiles/images/readMe-images/expense-tracker.png)
 
 ### Features Left to Implement
 
-- Another feature idea
+- Budget Planner
 
 ## Testing 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+.
 
 
 ### Validator Testing 
