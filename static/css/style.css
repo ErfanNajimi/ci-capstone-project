@@ -52,6 +52,13 @@ nav {
     color: #E6E8E6;
 }
 
+/* Expense Tracker */
+
+.btn-delete{
+    background-color: red;
+    color: #E6E8E6;
+}
+
 /* Footer */
 footer {
     background-color: #3B28CC;

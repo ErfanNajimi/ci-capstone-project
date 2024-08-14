@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import Income, Expense
 from .forms import IncomeForm, ExpenseForm
 
@@ -45,3 +46,16 @@ def tracker(request):
             "expense_form": expense_form,
         },
     )
+
+def income_delete(request, income_id):
+    if request.method == "POST":
+        # incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
+        income = get_object_or_404(Income, pk=income_id)
+
+        if income.account == request.user:
+            income.delete()
+            messages.add_message(request, messages.SUCCESS, 'Income deleted!')
+        else:
+            messages.add_message(request, messages.ERROR, 'You cannot delete this!')
+
+    return HttpResponseRedirect(reverse('tracker'))

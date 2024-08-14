@@ -17,7 +17,9 @@
                 <tbody>
                 {% for income in incomes %}
                   <tr>
-                    <td>{{ income.source }}</td>
+                    <td>{{ income.source }} 
+                        <button class="btn btn-delete" income_id="{{ income.id }}">Delete</button>
+                    </td>
                     <td>£{{ income.amount }}</td>
                     <td>
                         {% if income.freq == 1 %}
