@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def tracker(request):
-    return HttpResponse("Hi2")
+def public(request):
+    return HttpResponse("Hi")
