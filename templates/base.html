@@ -33,18 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link {% if request.path == tracker_url %}active{% endif %}" aria-current="page" href="{% url 'tracker' %}">Expense Tracker</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Budget Planner</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
