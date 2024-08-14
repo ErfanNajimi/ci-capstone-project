@@ -5,5 +5,5 @@ from django.http import HttpResponse
 def public(request):
     return render(
         request,
-        "base.html",
+        "public/index.html",
     )
