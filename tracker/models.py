@@ -23,6 +23,7 @@ CATEGORY = (
     (17, "Mobile phone"),
     (18, "Broadband"),
     (19, "Other"), 
+    (20, "Blank")
 )
 
 # Create your models here.
@@ -43,7 +44,7 @@ class Income(models.Model):
 class Expense(models.Model):
     account = models.ForeignKey(User, on_delete=models.CASCADE, related_name="expenses")
     description = models.CharField(max_length=120)
-    category = models.IntegerField(choices=CATEGORY, blank=True)
+    category = models.IntegerField(choices=CATEGORY, default=20)
     recurring = models.BooleanField(default=False)
     freq = models.IntegerField(choices=FREQ, default = 0)
     amount = models.FloatField()

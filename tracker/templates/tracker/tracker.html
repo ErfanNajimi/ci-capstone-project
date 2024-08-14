@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+<br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
@@ -32,6 +34,21 @@
                 {% endfor %}
                 </tbody>
               </table>
+              <div>
+                <h2>Add more income sources:</h2>
+                <form method="post">
+                    <div class="row">
+                        <div class="col">
+                            {{ income_form | crispy }}
+                            {% csrf_token %}
+                        </div>
+                        <div class="col">
+                            <br>
+                            <button type="submit" class="btn btn-signup">Submit</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
         </div>
         <div class="col-md-6">
             <table class="table">
@@ -62,6 +79,21 @@
                 {% endfor %}
                 </tbody>
               </table>
+              <div>
+                <h2>Add more expenses:</h2>
+                <form method="post">
+                    <div class="row">
+                        <div class="col">
+                            {{ expense_form | crispy }}
+                            {% csrf_token %}
+                        </div>
+                        <div class="col">
+                            <br>
+                            <button type="submit" class="btn btn-signup">Submit</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
         </div>
     </div>
 </div>
