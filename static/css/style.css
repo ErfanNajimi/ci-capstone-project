@@ -59,6 +59,35 @@ nav {
     color: #E6E8E6;
 }
 
+.tracker-link{
+    background-color: #D81E5B;
+    color: #E6E8E6;
+    text-decoration: none;
+    font-size: 120%;
+    line-height: 3rem;
+    display: block;
+    border: 3px solid #E6E8E6;
+}
+
+.tracker-link:hover {
+    background-color: #E6E8E6;
+    color: #D81E5B;
+    border: 3px solid #D81E5B;
+    /* animation-name: border;
+    animation-duration: 10s; */
+}
+
+@keyframes border {
+    /* from {border: 3px solid #E6E8E6;}
+    to {border: 3px solid #D81E5B;} */
+    /* 0%   {border: 3px solid #E6E8E6;}
+    20%  {border-left:3px solid #D81E5B;}
+    40%  {border-bottom:3px solid #D81E5B;}
+    60%  {border-right:3px solid #D81E5B;}
+    80% {border-top:3px solid #D81E5B;}
+    100%  {border:3px solid #D81E5B;} */
+}
+
 /* Footer */
 footer {
     background-color: #3B28CC;
