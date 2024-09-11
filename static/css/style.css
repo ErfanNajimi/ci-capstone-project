@@ -64,9 +64,12 @@ nav {
     border-bottom: 0;
     border-radius: 10px 10px 0 0;
     display: block;
-    line-height: 2rem;
+    line-height: 2.5rem;
     text-decoration: none;
-    font-size: 140%;
+    font-family: 'Exo', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #D81E5B;
 }
 
@@ -119,5 +122,9 @@ footer i:hover {
 @media screen and (min-width: 576px){
     #logo-collapse {
         display: inline-block;
+    }
+
+    .tracker-link {
+        font-size: 140%;
     }
 }
