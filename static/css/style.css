@@ -88,6 +88,11 @@ nav {
 }
 
 /* Footer */
+
+#spacer {
+    height: 100px;
+}
+
 footer {
     background-color: #3B28CC;
     color: #E6E8E6;
