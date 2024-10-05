@@ -5,6 +5,7 @@
 body {
     background-color: #E6E8E6;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -60,7 +61,7 @@ nav {
 } */
 
 .tracker-link{
-    border: 3px solid #D81E5B;
+    border: 3px solid #3B28CC;
     border-bottom: 0;
     border-radius: 10px 10px 0 0;
     display: block;
@@ -70,24 +71,57 @@ nav {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #D81E5B;
+    color: #3B28CC;
 }
 
 .tracker-nav-active{
-    background-color: #D81E5B;
+    background-color: #3B28CC;
     color: #E6E8E6;
 }
 
 .tracker-link:hover {
-    background-color: #D81E5B;
+    background-color: #3B28CC;
     color: #E6E8E6;
 }
 
 #tracker-main-content {
-    border: 3px solid #D81E5B;
+    border: 3px solid #3B28CC;
+    border-radius: 0 0 10px 10px;
+    min-height: 65vh;
+    padding: 5vh 0 5vh 0;
+    background-color: #3B28CC;
+}
+
+/* #tracker-main-content col {
+    background-color: white;
+} */
+
+.post-it {
+    background-color: #e6759b;
     border-radius: 10px;
-    height: 500px;
-    background-color: #D81E5B;
+    height: 100px;
+    width: 100px;
+    border: 0;
+    color: white;
+    text-decoration: bold;
+}
+
+.post-it:hover {
+    background-color:#D81E5B;
+    color: white;
+}
+
+.green {
+    background-color: rgb(176, 248, 176);
+}
+
+.green:hover {
+    background-color: rgb(53, 179, 53);
+}
+
+.fa-plus {
+    font-size: 300%;
+    color: lightgreen;
 }
 
 /* Footer */
@@ -126,5 +160,14 @@ footer i:hover {
 
     .tracker-link {
         font-size: 140%;
+    }
+
+    #tracker-main-content {
+        border-radius: 10px 0 10px 10px;
+    }
+
+    .post-it {
+        height: 200px;
+        width: 200px;
     }
 }

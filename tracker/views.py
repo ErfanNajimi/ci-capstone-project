@@ -5,7 +5,7 @@ from .models import Income, Expense
 from .forms import IncomeForm, ExpenseForm
 
 # Create your views here.
-def tracker(request):
+def overview(request):
 
     incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
     expenses = Expense.objects.all().order_by("-date_added").filter(account=request.user)
@@ -38,7 +38,7 @@ def tracker(request):
 
     return render(
         request,
-        'tracker/tracker.html',
+        'tracker/overview.html',
         {
             "expenses": expenses,
             "incomes": incomes,
@@ -47,15 +47,28 @@ def tracker(request):
         },
     )
 
-def income_delete(request, income_id):
-    if request.method == "POST":
-        # incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
-        income = get_object_or_404(Income, pk=income_id)
+def income(request):
 
-        if income.account == request.user:
-            income.delete()
-            messages.add_message(request, messages.SUCCESS, 'Income deleted!')
-        else:
-            messages.add_message(request, messages.ERROR, 'You cannot delete this!')
+    return render(
+        request,
+        'tracker/income.html',
+        # {
+        #     # "expenses": expenses,
+        #     # "incomes": incomes,
+        #     # "income_form": income_form,
+        #     # "expense_form": expense_form,
+        # },
+    )
 
-    return HttpResponseRedirect(reverse('tracker'))
+def expense(request):
+
+    return render(
+        request,
+        'tracker/expense.html',
+        # {
+        #     # "expenses": expenses,
+        #     # "incomes": incomes,
+        #     # "income_form": income_form,
+        #     # "expense_form": expense_form,
+        # },
+    )
