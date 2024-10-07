@@ -4,6 +4,8 @@
 /* General */
 body {
     background-color: #E6E8E6;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -25,19 +27,101 @@ nav {
     padding: 0 10px 0 10px;
 }
 
-/* Home page */
-
-#home-content {
-    width: 100%;
-    /* height: 74vh; */
-    /* background-color: #FFB30F; */
+#logo-collapse {
+    display: none;
 }
 
-#hero-image {
-    height: inherit;
-    width: 40vw;
-    object-fit: cover;
-    
+/* Home page */
+
+#home-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Exo', sans-serif;
+    color: #3B28CC;
+}
+
+/* Login page */
+
+.btn-signup {
+    background-color: #3B28CC;
+    color:#E6E8E6;
+}
+
+.btn-signup:hover{
+    background-color: #FFB30F;
+    font-size: 120%;
+    color: #E6E8E6;
+}
+
+/* Expense Tracker */
+
+/* .btn-delete{
+    background-color: red;
+    color: #E6E8E6;
+} */
+
+.tracker-link{
+    border: 3px solid #3B28CC;
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    line-height: 2.5rem;
+    text-decoration: none;
+    font-family: 'Exo', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #3B28CC;
+}
+
+.tracker-nav-active{
+    background-color: #3B28CC;
+    color: #E6E8E6;
+}
+
+.tracker-link:hover {
+    background-color: #3B28CC;
+    color: #E6E8E6;
+}
+
+#tracker-main-content {
+    border: 3px solid #3B28CC;
+    border-radius: 0 0 10px 10px;
+    min-height: 65vh;
+    padding: 5vh 0 5vh 0;
+    background-color: #3B28CC;
+}
+
+/* #tracker-main-content col {
+    background-color: white;
+} */
+
+.post-it {
+    background-color: #e6759b;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+    border: 0;
+    color: white;
+    text-decoration: bold;
+}
+
+.post-it:hover {
+    background-color:#D81E5B;
+    color: white;
+}
+
+.green {
+    background-color: rgb(176, 248, 176);
+}
+
+.green:hover {
+    background-color: rgb(53, 179, 53);
+}
+
+.fa-plus {
+    font-size: 300%;
+    color: lightgreen;
 }
 
 /* Footer */
@@ -51,7 +135,8 @@ footer {
     color: #E6E8E6;
     height: 100px;
     width: 100%;
-    position: absolute;
+    position: fixed;
+    left: 0;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -65,4 +150,24 @@ footer a {
 footer i:hover {
     color: #FFB30F;
     font-size: 40px;
+}
+
+/* Media queries */
+@media screen and (min-width: 576px){
+    #logo-collapse {
+        display: inline-block;
+    }
+
+    .tracker-link {
+        font-size: 140%;
+    }
+
+    #tracker-main-content {
+        border-radius: 10px 0 10px 10px;
+    }
+
+    .post-it {
+        height: 200px;
+        width: 200px;
+    }
 }

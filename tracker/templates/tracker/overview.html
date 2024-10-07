@@ -1,6 +1,37 @@
 {% extends "tracker.html" %}
 
 {% block tracker-content %}
-<p>overview</p>
+<!-- Select options -->
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn"><i class="fa-solid fa-chart-simple"></i></button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn"><i class="fa-solid fa-chart-pie"></i></button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn"><i class="fa-solid fa-chart-line"></i></i></button>
+    </div>
+</div>
+
+<!-- Bar chat -->
+<div class="row justify-content-center">
+    <div class="col-6 " id="bar-chart">
+        <div class="row justify-content-center">
+            <div class="col-6 bars" id="income-bar"></div>
+            <div class="col-6 bars" id="expense-bar"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Pie chat -->
+<div class="row">
+
+</div>
+
+<!-- Line graph -->
+<div class="row">
+
+</div>
 
 {% endblock %}

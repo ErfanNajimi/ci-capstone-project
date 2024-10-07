@@ -4,6 +4,30 @@ from django.http import HttpResponseRedirect
 from .models import Income, Expense
 from .forms import IncomeForm, ExpenseForm
 
+CATEGORY = {
+    0: "Rent", 
+    1: "Mortgage Loan", 
+    2: "Utilities", 
+    3: "Food", 
+    4: "Transportation",
+    5: "Car Insurance",
+    6: "Car Repairs",
+    7: "Fuel", 
+    8: "Entertainment", 
+    9: "Furnishings",
+    10: "Home Insurnace",
+    11: "Life Insurnace", 
+    12: "Retirement", 
+    13: "Savings",
+    14: "Student Loans",
+    15: "Loan", 
+    16: "Child Expenses",
+    17: "Mobile phone",
+    18: "Broadband",
+    19: "Other", 
+    20: "Blank",
+}
+
 # Create your views here.
 def overview(request):
 
@@ -48,27 +72,30 @@ def overview(request):
     )
 
 def income(request):
+    incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
 
     return render(
         request,
         'tracker/income.html',
-        # {
+        {
         #     # "expenses": expenses,
-        #     # "incomes": incomes,
+            "incomes": incomes,
         #     # "income_form": income_form,
         #     # "expense_form": expense_form,
-        # },
+        },
     )
 
 def expense(request):
+    expenses = Expense.objects.all().order_by("-date_added").filter(account=request.user)
 
     return render(
         request,
         'tracker/expense.html',
-        # {
-        #     # "expenses": expenses,
+        {
+            "expenses": expenses,
         #     # "incomes": incomes,
         #     # "income_form": income_form,
         #     # "expense_form": expense_form,
-        # },
+            "category": CATEGORY,
+        },
     )

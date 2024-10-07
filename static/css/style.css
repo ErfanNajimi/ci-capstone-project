@@ -124,6 +124,36 @@ nav {
     color: lightgreen;
 }
 
+/* Tracker > Overview */
+
+.fa-chart-simple,
+.fa-chart-pie,
+.fa-chart-line {
+    font-size: 300%;
+}
+
+#bar-chart {
+    border-left: 5px solid grey;
+    border-bottom: 5px solid grey;
+    height: 200px;
+    width: 300px;
+}
+
+.bars {
+    width: 100px;
+    height: 200px;
+    margin-right: 10px;
+    border-bottom: 5px solid grey;
+}
+
+#income-bar {
+    background-color: green;
+}
+
+#expense-bar {
+    background-color: red;
+}
+
 /* Footer */
 
 #spacer {
