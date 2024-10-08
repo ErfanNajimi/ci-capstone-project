@@ -1,9 +1,8 @@
 {% extends "tracker.html" %}
 
 {% block tracker-content %}
-{{ total_income }}
 <!-- Select options -->
-<div class="row">
+<!-- <div class="row">
     <div class="col">
         <button type="button" class="btn"><i class="fa-solid fa-chart-simple"></i></button>
     </div>
@@ -13,30 +12,27 @@
     <div class="col">
         <button type="button" class="btn"><i class="fa-solid fa-chart-line"></i></i></button>
     </div>
-</div>
+</div> -->
 
 <!-- Bar chat -->
 <div class="row justify-content-center">
-    <div class="col-6 " id="bar-chart">
-        <div class="row justify-content-center">
+    <h2 class="axis-label">Overview</h2>
+    <div class="col-6" id="bar-chart">
+        <div class="row justify-content-center align-items-end">
             <div class="col-6 bars" id="income-bar"></div>
+            {{ total_monthly_income | json_script:"total-monthly-income" }}
+            {{ total_quarterly_income | json_script:"total-quarterly-income" }}
+            {{ total_annually_income | json_script:"total-annually-income" }}
             <div class="col-6 bars" id="expense-bar"></div>
+            {{ total_monthly_expense | json_script:"total-monthly-expense" }}
+            {{ total_quarterly_expense | json_script:"total-quarterly-expense" }}
+            {{ total_annually_expense | json_script:"total-annually-expense" }}
         </div>
     </div>
-</div>
-
-<!-- Pie chat -->
-<div class="row">
-    <div id="pie-chart">
-        <div class="rotation" style="rotate: 0deg;">
-            <div class="portion"></div>
-        </div>
-    </div>
-</div>
-
-<!-- Line graph -->
-<div class="row">
-
+    <p class="axis-label">Income | Expense</p>
+    <br>
+    <p class="axis-label">The graph above shows you by comparison your monthly income and expenditure.</p>
+    <p class="axis-label">To make changes, please use the appropriate tab.</p>
 </div>
 
 {% endblock %}

@@ -133,58 +133,34 @@ nav {
 }
 
 #bar-chart {
-    border-left: 5px solid grey;
-    border-bottom: 5px solid grey;
+    border-left: 5px solid rgb(40, 19, 19);
+    border-bottom: 5px solid rgb(40, 19, 19);
     height: 200px;
     width: 300px;
+}
+
+#bar-chart .row {
+    height: inherit;
 }
 
 .bars {
     width: 100px;
     height: 200px;
     margin-right: 10px;
-    border-bottom: 5px solid grey;
+    border-bottom: 5px solid rgb(40, 19, 19);
+    border-radius: 5px 5px 0 0 ;
 }
 
-#pie-chart {
-    position:relative; 
-    border-radius: 50%; 
-    background-color: aqua;
-    height: 100px;
-    width: 100px;
-    padding: 0;
-}
-
-.rotation {
-    background-color: transparent;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    position: absolute;
-    padding: 0;
-}
-
-.portion {
-    z-index: 99;
-    height: 0;
-    width: 0;
-    border-right: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 1px solid #FFB30F;
-    border-top: 0 solid transparent;
-    background-color: transparent;
-    position: absolute;
-    left: 50px;
-    border-radius: 0 100px 0 0;
-
+.axis-label {
+    color: white;
 }
 
 #income-bar {
-    background-color: green;
+    background-color: rgb(33, 192, 33);
 }
 
 #expense-bar {
-    background-color: red;
+    background-color: rgb(231, 40, 40);
 }
 
 /* Footer */
@@ -232,5 +208,16 @@ footer i:hover {
     .post-it {
         height: 200px;
         width: 200px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .bars {
+        width: 70px;
+    }
+
+    .tracker-link {
+        border-radius: 0;
+        border-bottom: 3px solid #3B28CC;
     }
 }

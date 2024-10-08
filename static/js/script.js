@@ -1,25 +1,20 @@
 // Tracker Overview
 
 // Bar chart
+const totalMonthlyIncome = parseFloat(document.getElementById('total-monthly-income').innerHTML);
+const totalMonthlyExpense = parseFloat(document.getElementById('total-monthly-expense').innerHTML);
+const totalQuarterlyIncome = parseFloat(document.getElementById('total-quarterly-income').innerHTML);
+const totalQuarterlyExpense = parseFloat(document.getElementById('total-quarterly-expense').innerHTML);
+const totalAnnuallyIncome = parseFloat(document.getElementById('total-annually-income').innerHTML);
+const totalAnnuallyExpense = parseFloat(document.getElementById('total-annually-expense').innerHTML);
 
-document.getElementById('income-bar').style.height = '50px';
-document.getElementById('expense-bar').style.height = '50px';
+let totalIncome = totalMonthlyIncome + (totalQuarterlyIncome / 3) + (totalAnnuallyIncome / 12);
+let totalExpense = totalMonthlyExpense + (totalQuarterlyExpense / 3) + (totalAnnuallyExpense / 12);
 
-let percentage = 50;
+const greaterAmount = totalIncome > totalExpense ? totalIncome : totalExpense;
 
-const perc1 = document.getElementsByClassName('rotation')[0];
+document.getElementById('income-bar').style.height = `${(totalIncome / greaterAmount) * 200}px`;
+document.getElementById('expense-bar').style.height = `${(totalExpense / greaterAmount) * 200}px`;
 
-// let str = "";
-
-// for (let i = 0; i < perc1.length; i++) {
-// 	console.log(perc1[i]);
-// 	str += perc1[i].innerHTML;
-// }
-
-let str = "";
-
-for (let i = 0; i < percentage; i++) {
-    str += document.getElementById('pie-chart').innerHTML;
-}
-
-document.getElementById('pie-chart').innerHTML += str;
+document.getElementById('income-bar').innerHTML = `£${Math.round(totalIncome)}`;
+document.getElementById('expense-bar').innerHTML = `£${Math.round(totalExpense)}`;

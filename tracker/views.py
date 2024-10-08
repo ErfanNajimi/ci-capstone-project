@@ -35,6 +35,11 @@ def overview(request):
     expenses = Expense.objects.all().order_by("-date_added").filter(account=request.user)
 
     total_monthly_income = sum([num [0] for num in incomes.filter(freq=1).values_list('amount')])
+    total_monthly_expense = sum([num [0] for num in expenses.filter(freq=1).values_list('amount')])
+    total_quarterly_income = sum([num [0] for num in incomes.filter(freq=3).values_list('amount')])
+    total_quarterly_expense = sum([num [0] for num in expenses.filter(freq=3).values_list('amount')])
+    total_annually_income = sum([num [0] for num in incomes.filter(freq=12).values_list('amount')])
+    total_annually_expense = sum([num [0] for num in expenses.filter(freq=12).values_list('amount')])
 
     if request.method == "POST":
         income_form = IncomeForm(data=request.POST)
@@ -68,7 +73,12 @@ def overview(request):
         {
             "expenses": expenses,
             "incomes": incomes,
-            "total_income" : total_monthly_income,
+            "total_monthly_expense" : total_monthly_expense,
+            "total_monthly_income" : total_monthly_income,
+            "total_quarterly_expense" : total_quarterly_expense,
+            "total_quarterly_income" : total_quarterly_income,
+            "total_annually_expense" : total_annually_expense,
+            "total_annually_income" : total_annually_income,
             "income_form": income_form,
             "expense_form": expense_form,
         },
