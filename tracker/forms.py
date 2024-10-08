@@ -9,4 +9,4 @@ class IncomeForm(forms.ModelForm):
 class ExpenseForm(forms.ModelForm):
     class Meta:
         model = Expense
-        fields = ('description', 'amount', 'freq')
+        fields = ('description', 'category', 'amount', 'freq')

@@ -41,6 +41,24 @@ def overview(request):
     total_annually_income = sum([num [0] for num in incomes.filter(freq=12).values_list('amount')])
     total_annually_expense = sum([num [0] for num in expenses.filter(freq=12).values_list('amount')])
 
+    return render(
+        request,
+        'tracker/overview.html',
+        {
+            "expenses": expenses,
+            "incomes": incomes,
+            "total_monthly_expense" : total_monthly_expense,
+            "total_monthly_income" : total_monthly_income,
+            "total_quarterly_expense" : total_quarterly_expense,
+            "total_quarterly_income" : total_quarterly_income,
+            "total_annually_expense" : total_annually_expense,
+            "total_annually_income" : total_annually_income,
+        },
+    )
+
+def income(request):
+    incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
+
     if request.method == "POST":
         income_form = IncomeForm(data=request.POST)
         if income_form.is_valid():
@@ -53,6 +71,18 @@ def overview(request):
             )
 
     income_form = IncomeForm()
+
+    return render(
+        request,
+        'tracker/income.html',
+        {
+            "incomes": incomes,
+            "income_form": income_form,
+        },
+    )
+
+def expense(request):
+    expenses = Expense.objects.all().order_by("-date_added").filter(account=request.user)
 
     if request.method == "POST":
         expense_form = ExpenseForm(data=request.POST)
@@ -69,46 +99,10 @@ def overview(request):
 
     return render(
         request,
-        'tracker/overview.html',
-        {
-            "expenses": expenses,
-            "incomes": incomes,
-            "total_monthly_expense" : total_monthly_expense,
-            "total_monthly_income" : total_monthly_income,
-            "total_quarterly_expense" : total_quarterly_expense,
-            "total_quarterly_income" : total_quarterly_income,
-            "total_annually_expense" : total_annually_expense,
-            "total_annually_income" : total_annually_income,
-            "income_form": income_form,
-            "expense_form": expense_form,
-        },
-    )
-
-def income(request):
-    incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
-
-    return render(
-        request,
-        'tracker/income.html',
-        {
-        #     # "expenses": expenses,
-            "incomes": incomes,
-        #     # "income_form": income_form,
-        #     # "expense_form": expense_form,
-        },
-    )
-
-def expense(request):
-    expenses = Expense.objects.all().order_by("-date_added").filter(account=request.user)
-
-    return render(
-        request,
         'tracker/expense.html',
         {
             "expenses": expenses,
-        #     # "incomes": incomes,
-        #     # "income_form": income_form,
-        #     # "expense_form": expense_form,
+            "expense_form": expense_form,
             "category": CATEGORY,
         },
     )

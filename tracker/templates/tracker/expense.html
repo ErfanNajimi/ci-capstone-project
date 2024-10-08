@@ -1,4 +1,5 @@
 {% extends "tracker.html" %}
+{% load crispy_forms_tags %}
 
 {% block tracker-content %}
 {% for expense in expenses %}
@@ -45,5 +46,31 @@
   </div>
 </div>
 {% endfor %}
-<div class="col-3 m-2 post-it d-flex justify-content-center align-items-center green"><i class="fa-solid fa-plus"></i></div>
+<button class="col-3 m-2 post-it d-flex justify-content-center align-items-center green" data-bs-toggle="modal" data-bs-target="#addExpense"">
+  <i class="fa-solid fa-plus"></i>
+</button>
+<!-- Modal (Add) -->
+<div class="modal fade" id="addExpense" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ModalLabel">Add</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post">
+      <div class="modal-body text-start">
+        <div class="row">
+          <div class="col">
+            {{ expense_form | crispy }}
+            {% csrf_token %}
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-signup">Submit</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
