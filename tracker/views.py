@@ -34,6 +34,8 @@ def overview(request):
     incomes = Income.objects.all().order_by("-date_added").filter(account=request.user)
     expenses = Expense.objects.all().order_by("-date_added").filter(account=request.user)
 
+    total_monthly_income = sum([num [0] for num in incomes.filter(freq=1).values_list('amount')])
+
     if request.method == "POST":
         income_form = IncomeForm(data=request.POST)
         if income_form.is_valid():
@@ -66,6 +68,7 @@ def overview(request):
         {
             "expenses": expenses,
             "incomes": incomes,
+            "total_income" : total_monthly_income,
             "income_form": income_form,
             "expense_form": expense_form,
         },

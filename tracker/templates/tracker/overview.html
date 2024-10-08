@@ -1,6 +1,7 @@
 {% extends "tracker.html" %}
 
 {% block tracker-content %}
+{{ total_income }}
 <!-- Select options -->
 <div class="row">
     <div class="col">
@@ -26,7 +27,11 @@
 
 <!-- Pie chat -->
 <div class="row">
-
+    <div id="pie-chart">
+        <div class="rotation" style="rotate: 0deg;">
+            <div class="portion"></div>
+        </div>
+    </div>
 </div>
 
 <!-- Line graph -->
